@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas Monte Luna - Personaliza Tu Hogar Ideal en Cabudare-Barquisimeto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+            background: #ff5252;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b6b;
+            border-radius: 2px;
+        }
+
+        /* Location Section */
+        .location {
+            background: #f8f9fa;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .location-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .location-image:hover {
+            transform: scale(1.05);
+        }
+
+        .location-text h3 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .location-text p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .highlight h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Property Features */
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b6b;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .gallery-caption p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        /* Investment Section */
+        .investment {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .investment-point {
+            background: rgba(255,255,255,0.15);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .investment-point:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .investment-point h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .investment-point p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .features-grid, .investment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .gallery-item, .investment-point {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Price Tag */
+        .price-tag {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+    .footer {
+	  text-align: center;
+	  margin-top: 30px;
+	  font-size: 12px;
+	  color: #666;
+	  padding-bottom: 20px;
+	}
+
+	.umbusk-section {
+	  margin-top: 15px;
+	}
+
+	.umbusk-link {
+	  text-decoration: none;
+	  display: inline-block;
+	}
+
+	.umbusk-logo {
+	  max-width: 60px;
+	  height: auto;
+	  opacity: 0.8;
+	  transition: opacity 0.3s ease;
+	}
+
+	.umbusk-logo:hover {
+	  opacity: 1;
+	}
+
+	.vibe-text {
+	  margin-top: 8px;
+	  font-size: 11px;
+	  color: #888;
+	  font-style: italic;
+	  letter-spacing: 0.5px;
+	}
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🏡 Casas Monte Luna</h1>
+            <p>Dos espectaculares casas de 3 plantas<br/>
+            en la mejor ubicación de Cabudare-Barquisimeto</p>
+            <p><strong>¡Oportunidad única de inversión en gris para que personalices tu hogar!</strong></p>
+            <a href="#contact" class="cta-button">¡Quiero más información!</a>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section location">
+        <div class="container">
+            <h2 class="section-title">📍 Ubicación Estratégica</h2>
+            <div class="location-grid">
+                <div>
+                <a href="https://maps.app.goo.gl/evWgFWuVT1Co721B8" alt="Ubicación Monte Luna Barquisimeto" class="location-image" target="_blank">
+                    <img src="https://github.com/umbusk1/Monte_Luna/blob/main/GoogleMap_Ubicacion.png?raw=true" alt="Ubicación Monte Luna Barquisimeto" class="location-image">
+                </a>
+                </div>
+                <div class="location-text">
+                    <h3>🌟 En el mejor sector de Cabudare</h3>
+                    <p>Monte Luna está estratégicamente ubicada en una de las zonas más valoradas de Cabudare, con fácil acceso a:</p>
+                    <p>✅ <strong>Tu lugar de trabajo</strong> - A menos de 15 minutos del centro de Barquisimeto</p>
+                    <p>✅ <strong>Centros comerciales</strong> - A un paso del centro de Cabudare</p>
+                    <p>✅ <strong>Colegios y universidades</strong> - Servicios educativos muy próximos</p>
+                    <p>✅ <strong>Hospitales y clínicas</strong> - Servicios médicos cercanos</p>
+                    <p>✅ <strong>Vías principales e infraestructura</strong> - Transporte y conectividad garantizados</p>
+                </div>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-text">
+                    <h3>🛡️ Seguridad y Tranquilidad</h3>
+                    <p>Monte Luna es una urbanización cerrada que ofrece:</p>
+                    <p>🏠 <strong>Vigilancia 24/7</strong> - Control de acceso permanente</p>
+                    <p>🏠 <strong>Ambiente familiar</strong> - Comunidad establecida y segura</p>
+                    <p>🏠 <strong>Calles amplias y área verde en el centro</strong> - Diseño urbano moderno</p>
+                    <p>🏠 <strong>Servicios básicos</strong> - Agua, luz, internet disponibles</p>
+                </div>
+                <div>
+                    <img src="https://raw.githubusercontent.com/umbusk1/Monte_Luna/refs/heads/main/Animacion_Llegando.gif" alt="Entrada Urbanización Monte Luna" class="location-image">
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>🎯 ¿Por qué Monte Luna es diferente?</h3>
+                <p>Mientras otros proyectos prometen, Monte Luna ya está bien construida. Es una inversión segura en una zona habitada, consolidada y valorizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Features -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title">🏘️ Características de las Casas</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🏠</span>
+                    <h3>3 Plantas Completas</h3>
+                    <p>Diseño vertical inteligente que maximiza el espacio. Planta baja, primer piso y sub-sótano funcional para múltiples usos.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3>Terminación en Gris</h3>
+                    <p>Personaliza a tu gusto. Construcción completa, terminada y lista para que agregues pisos, pintura y decoración según tus preferencias.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📐</span>
+                    <h3>Distribución Inteligente</h3>
+                    <p>Espacios con iluminación natural, amplios y bien distribuidos. Salas, cocina, habitaciones y baños ubicados estratégicamente.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🚗</span>
+                    <h3>Estacionamiento</h3>
+                    <p>Espacio para vehículo incluido. Acceso directo y seguro desde la calle principal de la urbanización.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💡</span>
+                    <h3>Servicios Incluidos</h3>
+                    <p>Conexiones eléctricas, sanitarias y de agua ya instaladas. Listo para que conectes tus electrodomésticos y demás aparatos.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📈</span>
+                    <h3>Potencial de Valorización</h3>
+                    <p>Zona residencial de clase media. Tu inversión se seguirá revalorizando con el tiempo en esta ubicación privilegiada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery">
+        <div class="container">
+            <h2 class="section-title">📸 Conoce las Casas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                <a href="https://github.com/umbusk1/Monte_Luna/blob/main/Casa_3_Plantas.gif?raw=true" class="location-image" target="_blank">
+				     <img src="https://github.com/umbusk1/Monte_Luna/blob/main/Casa_3_Plantas.gif?raw=true" alt="Vista exterior de la casa" class="location-image">
+                </a>
+                    <div class="gallery-caption">
+                        <h3>Vista Exterior</h3>
+                        <p>Fachada moderna con balcón en el primer piso y excelente vista</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                <a href="https://github.com/umbusk1/Monte_Luna/blob/main/Planos_3_Plantas.gif?raw=true" class="location-image" target="_blank">
+                    <img src="https://github.com/umbusk1/Monte_Luna/blob/main/Planos_3_Plantas.gif?raw=true" alt="Planos arquitectónicos" class="location-image">
+                </a>
+                    <div class="gallery-caption">
+                        <h3>Planos Arquitectónicos</h3>
+                        <p>Distribución inteligente con ideas de decoración y mobiliario incluidas</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                 <a href="https://github.com/umbusk1/Monte_Luna/blob/main/GoogleMap_ML.png?raw=true" class="location-image" target="_blank">
+                    <img src="https://github.com/umbusk1/Monte_Luna/blob/main/GoogleMap_ML.png?raw=true" class="location-image">
+                 </a>
+                    <div class="gallery-caption">
+                        <h3>Ubicación Exacta</h3>
+                        <p>Vista aérea mostrando la ubicación precisa dentro de la urbanización</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="section investment">
+        <div class="container">
+            <h2 class="section-title">💰 ¿Por qué es una Gran Inversión?</h2>
+            <p style="text-align: center; font-size: 1.3em; margin-bottom: 40px; opacity: 0.9;">
+                En un mercado saturado, estas casas destacan por razones sólidas:
+            </p>
+            <div class="investment-grid">
+                <div class="investment-point">
+                    <h3>🎯 Precio Competitivo</h3>
+                    <p>En gris significa ahorro inmediato. Pagas menos ahora y personalizas a tu manera, controlando tu presupuesto de acabados.</p>
+                </div>
+                <div class="investment-point">
+                    <h3>📍 Ubicación Premium</h3>
+                    <p>Monte Luna es reconocida como una de las mejores urbanizaciones de Cabudare. La buena ubicación es un factor importantísimo que incide en el valor de tu propiedad.</p>
+                </div>
+                <div class="investment-point">
+                    <h3>🏗️ Construcción Sólida</h3>
+                    <p>Estructura ya terminada y probada. Sin riesgos de construcción, sin retrasos ni sorpresas en el presupuesto.</p>
+                </div>
+                <div class="investment-point">
+                    <h3>🔒 Seguridad Garantizada</h3>
+                    <p>Urbanización cerrada con vigilancia 24/7. Tu familia e inversión protegidas en todo momento.</p>
+                </div>
+                <div class="investment-point">
+                    <h3>📈 Potencial de Renta</h3>
+                    <p>Una vez terminadas, perfectas para alquiler. La pregunta por casas en Monte Luna es constante y los precios de alquiler te harán recuperar pronto tu inversión si decides hacerlo.</p>
+                </div>
+                <div class="investment-point">
+                    <h3>⚡ Disponibilidad Inmediata</h3>
+                    <p>Mientras otros esperan años por entregas, tú puedes empezar a personalizar inmediatamente. Tiempo es dinero.</p>
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 50px;">
+                <h3>💡 Ventaja Competitiva
+                <p>Mientras el mercado está lleno de promesas y proyectos en planos,<br/>estas casas están <strong>LISTAS</strong>.<br/>Estas 2 unidades están disponibles en una excelente ubicación.</p></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <p style="text-align: center; font-size: 1.3em; margin-bottom: 30px;">
+                2 casas disponibles. No dejes que esta oportunidad se te escape.
+            </p>
+
+            <div class="price-tag" style="text-align: center; display: block; margin: 30px auto;">
+                💵 Precio especial por venta directa - ¡Pregunta sobre cómo conseguir financiamiento!
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📱 WhatsApp</h3>
+                    <p>Respuesta inmediata</p>
+					    <a href="https://wa.me/584122324636?text=Hola,%20me%20interesa%20información%20sobre%20las%20casas%20Monte%20Luna" target="_blank">
+                    <p><strong>Envía mensaje ahora</strong></p>
+                        </a>
+                    <p>Disponible 7 días de la semana</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🏠 Visitas</h3>
+                    <p>Agenda tu cita para visitar</p>
+                    <p><strong>Ver es creer</strong></p>
+                    <p>Horarios flexibles, fines de semana disponibles</p>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 Asesoría</h3>
+                    <p>Atención personalizada</p>
+                    <p><strong>Información sobre financiamiento</strong></p>
+                    <p>Planes de pago y opciones de inversión</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📋 Documentación</h3>
+                    <p>Todos los papeles en regla</p>
+                    <p><strong>Compra segura garantizada</strong></p>
+                    <p>Títulos de propiedad listos para transferir</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="cta-button" style="font-size: 1.4em; padding: 20px 60px;">
+                    🚀 ¡Quiero mi casa en Monte Luna!
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+	  <p style="margin-bottom: 20px;">Abitare Construcciones &copy; 2025</p>
+    	  <div class="umbusk-section">
+		    <a href="https://umbusk.com" target="_blank" class="umbusk-link">
+		      <img src="https://github.com/umbusk1/Monte_Luna/blob/main/Logo_BC1_Oreo_Tilted_with_name_only.png?raw=true"
+			       alt="Umbusk, LLC"
+	     			class="umbusk-logo">
+		    </a>
+		    </br>
+		    <div class="vibe-text">Vibe-coded</div>
+		  </div>
+		 </div>
+</body>
+</html>
